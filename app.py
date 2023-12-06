@@ -4,7 +4,7 @@ from src.utils import *
 from src.vertex import *
 
 st.set_page_config(
-    page_title="Vertex PaLM Text Generation API",
+    page_title="ASL Team 2 Data Delver",
     page_icon=":robot:",
     layout="centered",
     initial_sidebar_state="expanded",
@@ -20,7 +20,7 @@ create_session_state()
 
 #image = Image.open('./image/palm.jpg')
 #st.image(image)
-st.title(":red[PaLM 2] :blue[Vertex AI] Text Generation")
+st.title(":red[Team 2] :blue[Data Delver] Code Explaination")
 
 with st.sidebar:
     image = Image.open('./image/sidebar_image.jpg')
