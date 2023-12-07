@@ -9,11 +9,14 @@ from langchain.vectorstores import MatchingEngine
 from google.cloud import aiplatform
 from google.cloud import storage
 
-PROJECT_ID = os.environ.get('GCP_PROJECT') #Your Google Cloud Project ID
-LOCATION = os.environ.get('GCP_REGION')   #Your Google Cloud Project Region
+PROJECT_ID = 'qwiklabs-asl-04-e7ad74c2e059' #Your Google Cloud Project ID
+LOCATION = 'us-central1'   #Your Google Cloud Project Region
 vertexai.init(project=PROJECT_ID, location=LOCATION)
 GCS_BUCKET_NAME = f'{PROJECT_ID}-{DISPLAY_NAME}'
 EMBEDDING_MODEL = VertexAIEmbeddings(model_name="textembedding-gecko")
+ENDPOINT_ID = '7083674030691057664'
+INDEX_ID = '5317137076854980608'
+GCS_BUCKET_NAME='qwiklabs-asl-04-e7ad74c2e059-data_delver_v2'
 matching_engine_index = aiplatform.MatchingEngineIndex(
     INDEX_ID
 )
