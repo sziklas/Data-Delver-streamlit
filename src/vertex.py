@@ -1,3 +1,5 @@
+!pip3 install --user --upgrade \ langchain \ google-cloud-aiplatform
+
 #from vertexai.preview.language_models import TextGenerationModel
 import vertexai
 import streamlit as st
