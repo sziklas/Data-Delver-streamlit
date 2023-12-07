@@ -71,6 +71,8 @@ with st.container():
                                 top_k = st.session_state['top_k'])
             st.session_state['response'].append(response['result'])
             st.markdown(response['result'])
-            for source in sources:
-                st.markdown(f"Source: [{source[0]}]({source[1]})")
-            st.balloons()
+
+            if sources:
+                for source in sources:
+                    st.markdown(f"Source: [{source[0]}]({source[1]})")
+                st.balloons()
