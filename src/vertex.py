@@ -6,6 +6,7 @@ from langchain.llms import VertexAI
 from langchain.vectorstores import MatchingEngine
 from google.cloud import aiplatform
 from google.cloud import storage
+import re
 
 PROJECT_ID = 'qwiklabs-asl-04-e7ad74c2e059' #Your Google Cloud Project ID
 LOCATION = 'us-central1'   #Your Google Cloud Project Region
