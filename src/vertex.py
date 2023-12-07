@@ -1,7 +1,3 @@
-!pip3 install --user --upgrade \ langchain \ google-cloud-aiplatform
-
-#from vertexai.preview.language_models import TextGenerationModel
-import vertexai
 import streamlit as st
 import os
 import langchain.chains.RetrievalQA
@@ -13,7 +9,6 @@ from google.cloud import storage
 
 PROJECT_ID = 'qwiklabs-asl-04-e7ad74c2e059' #Your Google Cloud Project ID
 LOCATION = 'us-central1'   #Your Google Cloud Project Region
-vertexai.init(project=PROJECT_ID, location=LOCATION)
 GCS_BUCKET_NAME = f'{PROJECT_ID}-{DISPLAY_NAME}'
 EMBEDDING_MODEL = VertexAIEmbeddings(model_name="textembedding-gecko")
 ENDPOINT_ID = '7083674030691057664'
@@ -58,13 +53,6 @@ def get_text_generation(prompt="",  **parameters):
         chain_type="stuff",
         return_source_documents=True)
 
-    def query(prompt: str):
-        response = qa({"query": prompt})
-        print(response['result'])
-        print("\n\nCitations:")
-        for source in response['source_documents']:
-            print(source)
-            
-    response = query(prompt)
+    response = qa({"query": prompt})
 
     return response
