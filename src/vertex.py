@@ -9,7 +9,6 @@ from google.cloud import storage
 
 PROJECT_ID = 'qwiklabs-asl-04-e7ad74c2e059' #Your Google Cloud Project ID
 LOCATION = 'us-central1'   #Your Google Cloud Project Region
-GCS_BUCKET_NAME = f'{PROJECT_ID}-{DISPLAY_NAME}'
 EMBEDDING_MODEL = VertexAIEmbeddings(model_name="textembedding-gecko")
 ENDPOINT_ID = '7083674030691057664'
 INDEX_ID = '5317137076854980608'
