@@ -9,7 +9,7 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="expanded",
     menu_items={
-        'About': "# This app shows you how to use Vertex PaLM Text Generator API"
+        'About': "# This app will help explain code, like SQL, for you."
     }
 )
 
@@ -60,11 +60,11 @@ with st.container():
                 ," \t \t Debug Model: ",st.session_state['debug_mode'])
 
 
-    prompt = st.text_area("Add your prompt: ",height = 100)
+    prompt = st.text_area("Write your prompt below: ",height = 100)
     if prompt:
         st.session_state['prompt'].append(prompt)
         st.markdown("<h3 style='text-align: center; color: blue;'>Generator Model Response</h3>", unsafe_allow_html=True)
-        with st.spinner('PaLM is working to generate, wait.....'):
+        with st.spinner('Data Delver is diving into the data for you, please wait.....'):
             response, sources = get_text_generation(prompt=prompt, temperature = st.session_state['temperature'],
                                 max_output_tokens = st.session_state['token_limit'],
                                 top_p = st.session_state['top_p'],
