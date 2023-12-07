@@ -18,8 +18,8 @@ create_session_state()
 
 
 
-#image = Image.open('./image/palm.jpg')
-#st.image(image)
+image = Image.open('./image/title.jpg')
+st.image(image)
 st.title(":red[ASL Team 1] :blue[BI Data Delver] Code Explaination Tool")
 
 with st.sidebar:
