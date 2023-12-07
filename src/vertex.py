@@ -2,10 +2,10 @@
 import vertexai
 import streamlit as st
 import os
-from langchain.chains import RetrievalQA, ConversationalRetrievalChain
-from langchain.embeddings import VertexAIEmbeddings
-from langchain.llms import VertexAI 
-from langchain.vectorstores import MatchingEngine
+import langchain.chains.RetrievalQA
+import langchain.embeddings.VertexAIEmbeddings
+import langchain.llms.VertexAI 
+import langchain.vectorstores.MatchingEngine
 from google.cloud import aiplatform
 from google.cloud import storage
 
