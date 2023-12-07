@@ -69,5 +69,5 @@ with st.container():
                                 max_output_tokens = st.session_state['token_limit'],
                                 top_p = st.session_state['top_p'],
                                 top_k = st.session_state['top_k'])
-            st.session_state['response'].append(response)
-            st.markdown(response)
+            st.session_state['response'].append(response['result'])
+            st.markdown(response['result'])
