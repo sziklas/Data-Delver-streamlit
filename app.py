@@ -25,7 +25,7 @@ st.title(":red[ASL Team 1] :blue[BI Data Delver] Code Explaination Tool")
 with st.sidebar:
     image = Image.open('./image/sidebar_image.jpg')
     st.image(image)
-    st.markdown("<h2 style='text-align: center; color: red;'>Setting Tab</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: red;'>Settings Tab</h2>", unsafe_allow_html=True)
 
 
     st.write("Model Settings:")
