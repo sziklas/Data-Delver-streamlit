@@ -71,3 +71,4 @@ with st.container():
                                 top_k = st.session_state['top_k'])
             st.session_state['response'].append(response['result'])
             st.markdown(response['result'])
+            st.balloons()
