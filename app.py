@@ -4,7 +4,7 @@ from src.utils import *
 from src.vertex import *
 
 st.set_page_config(
-    page_title="ASL Team 2 Data Delver",
+    page_title="ASL Team 1 Data Delver",
     page_icon=":robot:",
     layout="centered",
     initial_sidebar_state="expanded",
