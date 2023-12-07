@@ -65,10 +65,12 @@ with st.container():
         st.session_state['prompt'].append(prompt)
         st.markdown("<h3 style='text-align: center; color: blue;'>Generator Model Response</h3>", unsafe_allow_html=True)
         with st.spinner('PaLM is working to generate, wait.....'):
-            response = get_text_generation(prompt=prompt, temperature = st.session_state['temperature'],
+            response, sources = get_text_generation(prompt=prompt, temperature = st.session_state['temperature'],
                                 max_output_tokens = st.session_state['token_limit'],
                                 top_p = st.session_state['top_p'],
                                 top_k = st.session_state['top_k'])
             st.session_state['response'].append(response['result'])
             st.markdown(response['result'])
+            for source in sources:
+                st.markdown(f"Source: [{source[0]}]({source[1]})")
             st.balloons()
