@@ -52,6 +52,22 @@ def get_text_generation(prompt="",  **parameters):
         chain_type="stuff",
         return_source_documents=True)
 
-    response = qa({"query": prompt})
+    def get_sources(response):
+        source_documents = response.get('source_documents')
+        if not source_documents:
+            return None
+        sources_list = []
+        for doc in source_documents:
+            doc_parsed = re.search(r'DDL NAME:\s+(.*)\n', doc.page_content).group(1)
+            doc_type = re.search(r'DDL_TYPE:\s+(.*)\n', doc.page_content).group(1)
+            if doc_type == 'PROCEDURE':
+                url = f'https://console.cloud.google.com/bigquery?project={PROJECT_ID}&p={PROJECT_ID}&d=rax_bq_metadata&r={doc_parsed}&page=routine'
+            else: url = f'https://console.cloud.google.com/bigquery?project={PROJECT_ID}&p={PROJECT_ID}&d=rax_bq_metadata&t={doc_parsed}&page=table'
+            sources_list.append([doc_parsed, url])
+        return sources_list
 
-    return response
+
+    response = qa({"query": prompt})
+    sources = get_sources(response)
+
+    return response, sources
