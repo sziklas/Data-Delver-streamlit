@@ -25,7 +25,7 @@ matching_engine_endpoint = aiplatform.MatchingEngineIndexEndpoint(
 @st.cache_resource
 def get_model():
     #generation_model = TextGenerationModel.from_pretrained("text-bison@001")
-    generation_model = VertexAI(model_name="code-bison@002", max_output_tokens=2048, temperature=.2)
+    generation_model = VertexAI(model_name="code-bison-32k", max_output_tokens=8192, temperature=.2)
     return generation_model
 
 def get_text_generation(prompt="",  **parameters):
