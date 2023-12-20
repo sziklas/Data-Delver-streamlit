@@ -9,7 +9,7 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="expanded",
     menu_items={
-        'About': "# This app will help explain code, like SQL, for you."
+        'About': "# This app will help explain code, like SQL, for you!"
     }
 )
 
