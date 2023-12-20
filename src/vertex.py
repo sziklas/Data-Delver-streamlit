@@ -10,7 +10,7 @@ import re
 
 PROJECT_ID = 'qwiklabs-asl-04-e7ad74c2e059' #Your Google Cloud Project ID
 LOCATION = 'us-central1'   #Your Google Cloud Project Region
-EMBEDDING_MODEL = VertexAIEmbeddings(model_name="textembedding-gecko")
+EMBEDDING_MODEL = VertexAIEmbeddings(model_name="textembedding-gecko@003")
 ENDPOINT_ID = '7083674030691057664'
 INDEX_ID = '5317137076854980608'
 GCS_BUCKET_NAME='qwiklabs-asl-04-e7ad74c2e059-data_delver_v2'
@@ -25,7 +25,7 @@ matching_engine_endpoint = aiplatform.MatchingEngineIndexEndpoint(
 @st.cache_resource
 def get_model():
     #generation_model = TextGenerationModel.from_pretrained("text-bison@001")
-    generation_model = VertexAI(model_name="code-bison-32k", max_output_tokens=8092, temperature=.2)
+    generation_model = VertexAI(model_name="code-bison@002", max_output_tokens=8092, temperature=.2)
     return generation_model
 
 def get_text_generation(prompt="",  **parameters):
